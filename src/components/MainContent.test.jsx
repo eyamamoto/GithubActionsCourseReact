@@ -18,4 +18,12 @@ describe('MainContent', () => {
     await userEvent.click(button);
     expect(screen.getByTestId('help-area')).toBeInTheDocument();
   });
+
+  it('Break the test, failure to test the workflow', async () => {
+    render(<MainContent />);
+
+    const button = screen.getByRole('button');
+    await userEvent.click(button);
+    expect(screen.getByTestId('help-area')).not.toBeInTheDocument();
+  });
 });
