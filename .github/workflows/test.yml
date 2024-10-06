@@ -1,5 +1,6 @@
 name: Test React Project
-on: push
+#configurando multiplos gatilhos de disparo nas actions
+on: [push, workflow_dispatch]
 jobs:
   test:
     runs-on: ubuntu-latest
