@@ -1,0 +1,19 @@
+name: Test React Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: REcupera codigo do repositorio
+        uses: actions/checkout@v3
+
+      - name: instala o nodejs com versão 18
+        uses: action/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: instala dependencias e executa comando com run
+        run: npm ci
+
+      - name: Executa os testes do projeto
+        run: npm test
