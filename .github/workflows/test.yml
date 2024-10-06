@@ -18,6 +18,9 @@ jobs:
       - name: Executa os testes do projeto
         run: npm test
   deploy: 
+  #needs e utilizado para criar uma dependencia. o deploy só vai funcionar quando o job anterior for finalizado 
+  #pode ser usado como [] para esperar varios processos
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: Recupera codigo do repositorio
